@@ -42,6 +42,6 @@ export class PecasPage {
     }) 
   }
   registerPeca(){
-    console.log("enviado form")
+    console.log(this.formGroup.value)
   }
 }

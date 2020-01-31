@@ -3,13 +3,12 @@
 
   <img src="assets/imgs/cell_img.png" alt="imgInicial">
 
-  <form>
-    
+  <form [formGroup] = "formGroup" (ngSubmit)="registerCarro(); $event.preventDefault()">
     <ion-item>
       <ion-label stacked>Cadastrar um Carro</ion-label>
-      <ion-input placeholder="Insira o modelo do carro"></ion-input>
+      <ion-input formControlName="nome" type="text"></ion-input>
     </ion-item>
-    <ion-item><button ion-button>Confirmar</button></ion-item>
+    <ion-item><button ion-button type="submit" [disabled]="formGroup.invalid">Confirmar</button></ion-item>
   </form>
   
   <button ion-button block outline (click)="CadastrarPeca()">Cadastrar Peça</button>
