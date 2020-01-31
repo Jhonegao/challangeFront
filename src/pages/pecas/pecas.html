@@ -15,14 +15,17 @@
       <ion-label stacked>Nome da peça*</ion-label>
       <ion-input formControlName="nome" type="text"></ion-input>
     </ion-item>
+    <p *ngIf="formGroup.controls.nome.dirty && formGroup.controls.nome.errors" margin-left>valor inválido</p>
     <ion-item>
       <ion-label stacked>Peso Liquido</ion-label>
-      <ion-input formControlName="pesoLiquido" type="text"></ion-input>
+      <ion-input formControlName="pesoLiquido" type="number"></ion-input>
     </ion-item>
+    <p *ngIf="formGroup.controls.pesoLiquido.dirty && formGroup.controls.pesoLiquido.errors" margin-left>valor inválido</p>
     <ion-item>
       <ion-label stacked>Peso Bruto</ion-label>
-      <ion-input formControlName="pesoBruto" type="text"></ion-input>
+      <ion-input formControlName="pesoBruto" type="number"></ion-input>
     </ion-item>
+    <p *ngIf="formGroup.controls.pesoBruto.dirty && formGroup.controls.pesoBruto.errors" margin-left>valor inválido</p>
     <ion-item>
     <ion-label stacked>Selecionar Carro*</ion-label>
       <ion-select formControlName="carroId">
