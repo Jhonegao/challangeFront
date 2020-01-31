@@ -10,29 +10,28 @@
 <ion-content padding>
 <h3>Pagina de cadastro das pecas</h3>
 
-<ion-content padding>
-  <form (ngSubmit)="registerPeca(); $event.preventDefault()">
+  <form [formGroup] = "formGroup" (ngSubmit)="registerPeca(); $event.preventDefault()">
     <ion-item>
       <ion-label stacked>Nome da peça*</ion-label>
-      <ion-input name="nome" type="text"></ion-input>
+      <ion-input formControlName="nome" type="text"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label stacked>Peso Liquido</ion-label>
-      <ion-input name="pesoLiquido" type="text"></ion-input>
+      <ion-input formControlName="pesoLiquido" type="text"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label stacked>Peso Bruto</ion-label>
-      <ion-input name="pesoBruto" type="text"></ion-input>
+      <ion-input formControlName="pesoBruto" type="text"></ion-input>
     </ion-item>
     <ion-item>
     <ion-label stacked>Selecionar Carro*</ion-label>
-      <ion-select name="estadoId" (ionChange)="updateCidades()">
+      <ion-select formControlName="carroId" (ionChange)="carrosFind()">
         <ion-option value="1">carro 1</ion-option>
         <ion-option value="2">carro 2</ion-option>
       </ion-select>
     </ion-item>
     <button ion-button block type="submit">Cadastrar Peça</button>
+
   </form>
 </ion-content>
 
-</ion-content>

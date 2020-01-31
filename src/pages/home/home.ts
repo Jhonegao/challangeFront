@@ -14,6 +14,7 @@ export class HomePage {
   }
 
   CadastrarPeca(){
+    console.log("swap page")
     this.navCtrl.setRoot('PecasPage')
   }
 
