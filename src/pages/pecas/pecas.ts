@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { CarroService } from '../../services/domain/carro.service';
+
 
 /**
  * Generated class for the PecasPage page.
@@ -15,11 +17,20 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class PecasPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public carroService: CarroService) {
+  
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad PecasPage');
+    this.carroService.findAll()
+    .subscribe(response => {
+      console.log(response);
+    },
+    error =>{
+      console.log(error);
+    }) 
+     
   }
-
 }
