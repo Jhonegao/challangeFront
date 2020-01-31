@@ -3,21 +3,36 @@
     <button ion-button menuToggle>
       <ion-icon name="menu" ></ion-icon>
     </button>
-    <ion-title>Cadastro de pecas</ion-title>
+    <ion-title>Cadastro de peças</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
 <h3>Pagina de cadastro das pecas</h3>
 
-
- <ion-item>
-  <ion-label>Selecionar Carro </ion-label>
-  <ion-select [(ngModel)]="this.item" interface="popover">
-    <ion-option *ngFor ="let item of items"
-    value="item">{{item.nome}}</ion-option>
-  </ion-select>
-</ion-item>
-
+<ion-content padding>
+  <form (ngSubmit)="registerPeca(); $event.preventDefault()">
+    <ion-item>
+      <ion-label stacked>Nome da peça*</ion-label>
+      <ion-input name="nome" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Peso Liquido</ion-label>
+      <ion-input name="pesoLiquido" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Peso Bruto</ion-label>
+      <ion-input name="pesoBruto" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+    <ion-label stacked>Selecionar Carro*</ion-label>
+      <ion-select name="estadoId" (ionChange)="updateCidades()">
+        <ion-option value="1">carro 1</ion-option>
+        <ion-option value="2">carro 2</ion-option>
+      </ion-select>
+    </ion-item>
+    <button ion-button block type="submit">Cadastrar Peça</button>
+  </form>
+</ion-content>
 
 </ion-content>

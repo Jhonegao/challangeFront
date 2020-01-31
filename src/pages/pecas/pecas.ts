@@ -27,4 +27,8 @@ export class PecasPage {
       console.log(error);
     }) 
   }
+
+  registerPeca(){
+    console.log("enviado form")
+  }
 }
