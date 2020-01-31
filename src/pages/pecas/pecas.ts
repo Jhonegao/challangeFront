@@ -3,6 +3,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CarroService } from '../../services/domain/carro.service';
 import { CarroDTO } from '../../models/carro.dto';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { PecaService } from '../../services/domain/peca.service';
+import { PecaDTO } from '../../models/peca.dto';
 
 @IonicPage()
 @Component({
@@ -12,12 +14,14 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 export class PecasPage {
 
   formGroup: FormGroup;
-  items: CarroDTO[];
+  carros: CarroDTO[];
+  pecas: PecaDTO[];
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
+              public formBuilder: FormBuilder,
               public carroService: CarroService,
-              public formBuilder: FormBuilder) {
+              public pecaSerivce: PecaService) {
   
   this.formGroup = this.formBuilder.group({
     nome: ['roda',[Validators.required, Validators.minLength(3),Validators.maxLength(200)]],
@@ -31,7 +35,7 @@ export class PecasPage {
   ionViewDidLoad() {
     this.carroService.findAll()
     .subscribe(response => {
-      this.items = response;
+      this.carros = response;
     },
     error =>{
       console.log(error);

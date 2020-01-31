@@ -3,6 +3,8 @@ import { IonicPageModule } from 'ionic-angular';
 import { PecasPage } from './pecas';
 import { IonicSelectableModule } from 'ionic-selectable';
 import { IonicModule } from 'ionic-angular';
+import { PecaService } from '../../services/domain/peca.service';
+import { CarroService } from '../../services/domain/carro.service';
 
 @NgModule({
   declarations: [
@@ -13,5 +15,10 @@ import { IonicModule } from 'ionic-angular';
     IonicSelectableModule,
     IonicModule
   ],
+  providers:[
+    PecaService,
+    CarroService,
+  ]
+
 })
 export class PecasPageModule {}
