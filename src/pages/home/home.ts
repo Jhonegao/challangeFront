@@ -13,4 +13,8 @@ export class HomePage {
 
   }
 
+  CadastrarPeca(){
+    this.navCtrl.setRoot('PecasPage')
+  }
+
 }
