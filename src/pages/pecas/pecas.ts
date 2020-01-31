@@ -1,14 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CarroService } from '../../services/domain/carro.service';
-
-
-/**
- * Generated class for the PecasPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+import { CarroDTO } from '../../models/carro.dto';
 
 @IonicPage()
 @Component({
@@ -16,6 +9,8 @@ import { CarroService } from '../../services/domain/carro.service';
   templateUrl: 'pecas.html',
 })
 export class PecasPage {
+
+  items: CarroDTO[];
 
   constructor(public navCtrl: NavController,
               public navParams: NavParams,
@@ -26,11 +21,10 @@ export class PecasPage {
   ionViewDidLoad() {
     this.carroService.findAll()
     .subscribe(response => {
-      console.log(response);
+      this.items = response;
     },
     error =>{
       console.log(error);
     }) 
-     
   }
 }

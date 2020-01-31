@@ -10,4 +10,14 @@
 <ion-content padding>
 <h3>Pagina de cadastro das pecas</h3>
 
+
+ <ion-item>
+  <ion-label>Selecionar Carro </ion-label>
+  <ion-select [(ngModel)]="this.item" interface="popover">
+    <ion-option *ngFor ="let item of items"
+    value="item">{{item.nome}}</ion-option>
+  </ion-select>
+</ion-item>
+
+
 </ion-content>
