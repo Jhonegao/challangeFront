@@ -3,6 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { IonicSelectableModule } from 'ionic-selectable';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 import { MyApp } from './app.component';
 
@@ -17,6 +18,7 @@ import { CarroService } from '../services/domain/carro.service';
   imports: [
     BrowserModule,
     HttpClientModule,
+    NgxDatatableModule,
     IonicSelectableModule,
     IonicModule.forRoot(MyApp),
   ],

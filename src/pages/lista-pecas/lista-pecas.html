@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Stack
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <div>
+     <ngx-datatable
+       [sortType]="'multi'"
+       [headerHeight]="50"
+       [footerHeight]="50"
+       [rowHeight]="50"
+       [rows]="rows"
+       [columns]="columns"
+       [columnMode]="'force'"
+       [limit]="10">
+     </ngx-datatable>
+  </div>
+</ion-content>
