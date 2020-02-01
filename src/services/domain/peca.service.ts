@@ -14,4 +14,15 @@ export class PecaService {
         return this.http.get<PecaDTO[]>(`${API_CONFIG.baseUrl}/pecas`)
     }
 
+    insertOne(obj : PecaDTO) {
+        return this.http.post(
+            `${API_CONFIG.baseUrl}/pecas`, 
+            obj,
+            { 
+                observe: 'response', 
+                responseType: 'text'
+            }
+        ); 
+    }
+
 }

@@ -44,10 +44,9 @@ async showAlert() {
         handler: ()=> {
         this.navCtrl.setRoot('PecasPage')
       }
-  }
-]
-  });
-
+    }
+  ]
+});
   await alert.present();
 }
 
